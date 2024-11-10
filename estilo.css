@@ -1,0 +1,112 @@
+/* Reset básico */
+* {
+    box-sizing: border-box; /* Inclui padding e bordas nas dimensões totais */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212; /* Cor de fundo escura */
+    color: white; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos em coluna */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    text-align: center; /* Centraliza o texto */
+}
+
+
+/* Media Queries para o Container de Atletas */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #container {
+    max-width: 600px; /* Largura máxima do container */
+        margin-left: 20%; /* Centraliza o container horizontalmente */
+        margin-right: 20%; /* Centraliza o container horizontalmente */
+        padding: 2rem; /* Ajusta o espaço interno do container */
+        
+    }
+    #botao{
+        margin-left: 50%; /* Centraliza o botão horizontalmente */
+        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
+
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+    #container {
+        max-width: 500px; /* Largura máxima do container */
+        margin-left: 25%; /* Centraliza o container horizontalmente */
+        margin-right: 25%; /* Centraliza o container horizontalmente */
+        padding: 2rem; /* Ajusta o espaço interno do container */
+
+    }
+    #botao{
+        margin-left: 50%; /* Centraliza o botão horizontalmente */
+        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
+        
+    }
+}
+
+@media (min-width: 1301px) {
+    #container {
+        max-width: 300px; /* Largura máxima do container */
+        margin-left: 35%; /* Centraliza o container horizontalmente */
+        margin-right: 35%; /* Centraliza o container horizontalmente */
+        padding: 2rem; /* Ajusta o espaço interno do container */
+       
+    }
+    #botao{
+        margin-left: 50%; /* Centraliza o botão horizontalmente */
+        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
+        
+    }
+}
+@media (min-width: 798px) {
+    #container {
+        max-width: 500px; /* Largura máxima do container */
+        margin-left: 25%; /* Centraliza o container horizontalmente */
+        margin-right: 25%; /* Centraliza o container horizontalmente */
+        padding: 2rem; /* Ajusta o espaço interno do container */
+       
+    }
+    #botao{
+        margin-left: 50%; /* Centraliza o botão horizontalmente */
+        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
+    }
+}
+
+
+#baixo {
+    margin-top: 1rem; /* Espaço acima do botão */
+}
+
+#botao {
+    background-color: #444; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    width: 100%; /* O botão ocupa toda a largura do container */
+    max-width: 200px; /* Largura máxima do botão */
+    height: 50px; /* Altura do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro */
+    border: none; /* Remove borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+}
+
+#botao:hover {
+    background-color: #666; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Leve movimento para cima */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #container {
+        width: 95vw; /* Aumenta a largura em telas menores */
+    }
+
+    #botao {
+        height: 45px; /* Ajusta a altura do botão em telas menores */
+    }
+}
