@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box; 
 }
 
 body {
     background-color: black; 
+
     color: white; 
     font-family: 'Arial', sans-serif;
 }
@@ -15,6 +19,8 @@ body {
     flex-wrap: wrap;
     justify-content: center; 
     padding: 2rem; 
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 #container > article {
@@ -37,14 +43,13 @@ body {
     border-radius: 10px; 
 }
 
-
-
 #protegido button:hover {
     background-color: #f0f0f0; 
 }
 
 #box {
-    background-color: #1c1c1c; 
+
+    background-color: #1c1c1cfa; 
     color: white;
     border-radius: 12px;
     width: 24rem;
@@ -66,29 +71,70 @@ h3, h4 {
     background-color: #333; 
     color: white;
     padding: 0.5em; 
-    border-radius: 5px; 
+    font-family: "Faculty Glyphic", sans-serif;
+    font-weight: 400;
 }
-h2{
+
+h2 {
     text-align: left;
     color: white;
     padding: 0.5em; 
-    display:contents ;
-    margin-top: -6vh;
- 
+    display: contents;
+    margin-top: -9vh;
+    margin-right: 5%;
+    font-family: "Faculty Glyphic", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+
+}
+
+.campo_pesquisa {
+    width: 30%;
+    margin-left: 30%;
+    text-align: left;
+    border: 1px solid #444; 
+    background-color: #444; 
+    color: white;
+    border-radius: 5px;
+    padding: 0.2em;
+    font-size: 100%;
+    font-weight: 500;
+    margin-top: 5vh;
+}
+.faculty-glyphic-regular {
+    font-family: "Faculty Glyphic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .pt-serif-regular-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+  }
+  
+
+hr {
+    width: 85%;
+    margin: 20px auto;
+    border: none;
+    border-bottom: 1px solid #ccc;
 }
 
 p {
-    font-family: 'Verdana', sans-serif;
+    font-family: "Faculty Glyphic", sans-serif;
     line-height: 1.5;
 }
 
+#loading {
+    display: none;
+    font-size: 25px;
+    color: #ffffff;
+}
 
 #data-container {
     margin-top: 20px;
 }
+
 #protegido {
-    margin-top: 1%;
-    padding: 2em;
     text-align: center;
     display: none;
 }
@@ -99,11 +145,19 @@ p {
     background-color: white; 
     color: black; 
     border: none;
-    padding: 0.5em 1em;
     border-radius: 5px; 
     margin-top: 1rem;
     cursor: pointer;
     transition: background-color 0.7s; 
+}
+
+#botao1 {
+    width: 8%;
+    height: 2em;
+    font-size: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-family: "PT Serif", serif;
 }
 
 #botao {
@@ -121,9 +175,13 @@ p {
     margin-left: 28%;
     border: 1px solid #444; 
     transition: transform 0.7s, box-shadow 0.7s;
+    font-family: "PT Serif", serif;
 }
-#botao:hover, #masculino:hover, #feminino:hover, #all:hover{
-   
+h1{
+    font-family: "PT Serif", serif;
+}
+
+#botao:hover, #masculino:hover, #feminino:hover, #all:hover {
     background-color: white;
     color: #333;
     transform: translateY(-5px);
@@ -145,7 +203,7 @@ p {
     border-radius: 5px; 
 }
 
-#logout{
+#logout {
     background-color: black; 
     color: white; 
     width: 15%;
@@ -156,18 +214,15 @@ p {
     font-weight: bold;
     margin-left: 60vh; 
     font-size: 100%;
-
 }
 
 #logout:hover {
-
     background-color: #222;
     border: 0.5 solid white; 
     color: red;
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5); 
-    transition: background-color 0.6s, box-shadow 0.6s;
+    box-shadow: 2px 4px 15px rgba(255, 0, 0, 0.5); 
+    transition: background-color 0.5s, box-shadow 0.5s;
     transform: translateY(-5px);
-    
 }
 
 input {
@@ -185,74 +240,78 @@ input {
 
 h2, h3, h4 {
     font-size: 24px; 
-}
-
-h4 {
-    font-size: 20px; 
+    font-family: "Faculty Glyphic", sans-serif;
 }
 
 
 @media (max-width: 768px) {
-    #container {
-        flex-direction: column; 
+    
+    #container > article {
+        width: 60%;
     }
-
-    #box {
-        width: 90%; 
-        margin: 20% auto; 
+    .campo_pesquisa {
+        width: 60%;
+        margin-left: 0;
+    }
+    #botao1 {
+        width: 15%;
+        margin-left: 5%;
+    }
+    button{
+        font-family: "PT Serif", serif;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    #container {
-        flex-direction: row; 
-    }
     #container > article {
-        width: calc(33.33% - 1rem);
+        width: calc(30% - 1.6rem);
+    }
+    h2{
+        margin-top: 15%;
+    }
+    .campo_pesquisa {
+        width: 60%;
+        margin-left: 0;
+    }
+    #botao1 {
+        width: 17%;
+        margin-left: 5%;
+    }
+    button{
+        font-family: "PT Serif", serif;
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1300px) {
+@media (min-width: 1024px) and (max-width: 1299px) {
     #container > article {
-        width: calc(25% - 1rem);
+        width: calc(20% - 1.5rem);
     }
-    #logout, #masculino, #feminino, #all {
-        width: 15vh;
-        height: 3vh;
-        margin: 2vh auto;
-        }
+    h2{
+        margin-top: 15%;
+        margin-left: 5%;
+    }
+    .campo_pesquisa {
+        width: 20%;
+        margin-left: 0;
+    }
+    #botao1 {
+        width: 15%;
+        margin-left: 5%;
+    }
+    button{
+        font-family: "PT Serif", serif;
+    }
 }
 
 @media (min-width: 1300px) {
     #container > article {
-        width: calc(20% - 1rem);
+        width: calc(18% - 1rem);
+       
     }
-}
-
-@media (max-width: 768px) {
-    .selection {
-        flex-direction: column; 
+    #container{
+        padding: 0;
     }
-
-    .selection-button {
-        width: 100%; 
+    button{
+        font-family: "PT Serif", serif;
     }
-    #logout, #masculino, #feminino, #all {
-    width: 15vh;
-    margin-top: .6vh;
-    height: 3vh;
-    margin: 2vh auto;
-    }
-}
-
-@media (min-width: 768px) {
-    .selection-button {
-        width: auto; 
-    }
-    #logout, #masculino, #feminino, #all {
-        width: 18vh;
-        margin-top: .7vh;
-        height: 4vh;
-        margin: 2vh auto;
-        }
 }

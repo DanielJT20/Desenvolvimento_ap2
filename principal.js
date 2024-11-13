@@ -13,21 +13,13 @@ const pegaJson = async (caminho) => {
     }
 };
 
-
-
-
-
 const manipulaClick = (e) => {
     const id = e.currentTarget.dataset.id;
     const url = `detalhada.html?id=${id}`;
-
-   
+    carregandoTela();
     document.cookie = `id=${id}`;
-    document.cookie = `altura=${e.currentTarget.dataset.altura}`;
     localStorage.setItem('id', id);
     localStorage.setItem('dados', JSON.stringify(e.currentTarget.dataset));
-    localStorage.setItem('dados', JSON.stringify(e.currentTarget.dataset));
-
 
     window.location = url;
 };
@@ -46,7 +38,6 @@ const montacard = (atleta) => {
     cartao.appendChild(imagem);
     cartao.appendChild(descri);
 
-
     cartao.onclick = manipulaClick;
     cartao.dataset.id = atleta.id;
     cartao.dataset.nJogos = atleta.n_jogos;
@@ -55,64 +46,106 @@ const montacard = (atleta) => {
     return cartao;
 };
 
+const container = document.getElementById('container');
+
+const carregandoTela = () => {
+    const loadingDiv = document.getElementById('loading');
+    loadingDiv.style.display = 'block';
+    setTimeout(function() {
+        loadingDiv.style.display = 'none';
+    }, 450);
+}; 
+
+const limpaBody = () => {
+    container.innerHTML = '';
+};
+
+const limpaInput = () =>{
+    document.getElementById('pesquisa').value = '';
+}
+
+// Função para pesquisar atletas
+const pesquisaAtletas = () => {
+    const searchTerm = document.getElementById('pesquisa').value.toLowerCase();
+    carregandoTela();
+    limpaBody();
+    pegaJson(`${url}all`).then((r) => {
+        if (r) {
+            const resultados = r.filter(atleta => atleta.nome.toLowerCase().includes(searchTerm));
+            if (resultados.length > 0) {
+                resultados.forEach((ele) => container.appendChild(montacard(ele)));
+            } else {
+                container.innerHTML = '<p>Nenhum atleta encontrado.</p>';
+            }
+        } else {
+            alert('Você precisa estar logado');
+        }
+    });
+};
+
+
+document.getElementById('botao1').onclick = pesquisaAtletas;
+
 
 const manipulaUrl1 = () => {
-   
+    carregandoTela();
+    limpaBody();
+    limpaInput();
     pegaJson(`${url}masculino`).then((r) => {
-        
         if (r) {
-
             r.forEach((ele) => container.appendChild(montacard(ele)));
+        } else {
+            alert('Você precisa estar logado');
         }
-
     });
-    
 };
 document.getElementById('masculino').onclick = manipulaUrl1;
 
-
 const manipulaUrl2 = () => {
+    carregandoTela();
+    limpaBody();
+    limpaInput();
     pegaJson(`${url}feminino`).then((r) => {
         if (r) {
             r.forEach((ele) => container.appendChild(montacard(ele)));
+        } else {
+            alert('Você precisa estar logado');
         }
-
     });
-
 };
 document.getElementById('feminino').onclick = manipulaUrl2;
 
-
 const manipulaUrl3 = () => {
+    carregandoTela();
+    limpaBody();
+    limpaInput();
     pegaJson(`${url}all`).then((r) => {
         if (r) {
             r.forEach((ele) => container.appendChild(montacard(ele)));
+        } else {
+            alert('Você precisa estar logado');
         }
-
     });
-
 };
 document.getElementById('all').onclick = manipulaUrl3;
 
-
 const manipulaBotao = () => {
     const texto = document.getElementById('senha').value;
-    if (hex_md5(texto) === '5029cc9dd0295ded2f500084635c18c1') {
+    if (hex_md5(texto) === 'a54f6754415236f9bae4e0add5446d74') {
         localStorage.setItem('logado', 'sim');
         document.getElementById("box").style.display = "none";
         document.getElementById("protegido").style.display = "block";
-        container.style.display = "flex";
+        limpaBody();
     } else {
         alert('Você errou a senha!!');
     }
 };
 document.getElementById('botao').onclick = manipulaBotao;
 
-
 document.getElementById('logout').onclick = () => {
     document.getElementById("box").style.display = "block";
     document.getElementById("protegido").style.display = "none";
     localStorage.removeItem('logado');
-    container.style.display = "none";
+    limpaBody();
     document.getElementById('senha').value = '';
 };

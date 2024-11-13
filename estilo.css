@@ -1,112 +1,99 @@
-/* Reset básico */
 * {
-    box-sizing: border-box; /* Inclui padding e bordas nas dimensões totais */
     margin: 0;
-    padding: 0;
+    box-sizing: border-box; 
 }
 
 body {
-    background-color: #121212; /* Cor de fundo escura */
-    color: white; /* Cor do texto */
-    font-family: Arial, sans-serif; /* Fonte padrão */
+    background-color: black; 
+    background-image: url('escudo.png');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white; 
+    font-family: 'Arial', sans-serif;
     display: flex;
-    flex-direction: column; /* Alinha os elementos em coluna */
-    justify-content: center; /* Centraliza verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-    height: 100vh; /* Ocupa toda a altura da tela */
-    text-align: center; /* Centraliza o texto */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+}
+.container {
+    max-width: 75%;
+    margin: 1%;
+    padding: 2vw;
+    background-color: #222222e1;
+    border-radius: 8px;
+    box-shadow: 3px 4px 8px rgba(230, 230, 230, 0.404);
+    text-align: center;
+    border: white 0.5px solid;
 }
 
 
-/* Media Queries para o Container de Atletas */
-@media (min-width: 769px) and (max-width: 1024px) {
-    #container {
-    max-width: 600px; /* Largura máxima do container */
-        margin-left: 20%; /* Centraliza o container horizontalmente */
-        margin-right: 20%; /* Centraliza o container horizontalmente */
-        padding: 2rem; /* Ajusta o espaço interno do container */
-        
-    }
-    #botao{
-        margin-left: 50%; /* Centraliza o botão horizontalmente */
-        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
-
-    }
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-@media (min-width: 1025px) and (max-width: 1300px) {
-    #container {
-        max-width: 500px; /* Largura máxima do container */
-        margin-left: 25%; /* Centraliza o container horizontalmente */
-        margin-right: 25%; /* Centraliza o container horizontalmente */
-        padding: 2rem; /* Ajusta o espaço interno do container */
-
-    }
-    #botao{
-        margin-left: 50%; /* Centraliza o botão horizontalmente */
-        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
-        
-    }
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    
 }
 
-@media (min-width: 1301px) {
-    #container {
-        max-width: 300px; /* Largura máxima do container */
-        margin-left: 35%; /* Centraliza o container horizontalmente */
-        margin-right: 35%; /* Centraliza o container horizontalmente */
-        padding: 2rem; /* Ajusta o espaço interno do container */
-       
-    }
-    #botao{
-        margin-left: 50%; /* Centraliza o botão horizontalmente */
-        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
-        
-    }
-}
-@media (min-width: 798px) {
-    #container {
-        max-width: 500px; /* Largura máxima do container */
-        margin-left: 25%; /* Centraliza o container horizontalmente */
-        margin-right: 25%; /* Centraliza o container horizontalmente */
-        padding: 2rem; /* Ajusta o espaço interno do container */
-       
-    }
-    #botao{
-        margin-left: 50%; /* Centraliza o botão horizontalmente */
-        transform: translateX(-50%); /* Posiciona o botão à esquerda do centro */
-    }
+p {
+    
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
 }
 
-
-#baixo {
-    margin-top: 1rem; /* Espaço acima do botão */
+button {
+    display: inline-block;
+    background-color: white; 
+    color: #444;
+    width: 18%;
+    margin: 1vh;
+    height: 2.5em;
+    border-radius: 5px;
+    font-size: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s; 
+    font-weight: bold;
+    border: 1px solid #444; 
+    transition: transform 0.7s, box-shadow 0.7s;
 }
 
-#botao {
-    background-color: #444; /* Cor de fundo do botão */
-    color: white; /* Cor do texto do botão */
-    width: 100%; /* O botão ocupa toda a largura do container */
-    max-width: 200px; /* Largura máxima do botão */
-    height: 50px; /* Altura do botão */
-    font-size: 1rem; /* Tamanho da fonte */
-    cursor: pointer; /* Cursor de ponteiro */
-    border: none; /* Remove borda padrão */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+button:hover {
+    background-color: #1d1d1d;
+    color: white;
+    border: none;
+    transition: .4s ease-out;
+    transform: translateY(-5px);
+    box-shadow: 1px 6px 15px white; 
 }
 
-#botao:hover {
-    background-color: #666; /* Cor de fundo ao passar o mouse */
-    transform: translateY(-2px); /* Leve movimento para cima */
-}
-
-/* Media Queries para Responsividade */
 @media (max-width: 768px) {
-    #container {
-        width: 95vw; /* Aumenta a largura em telas menores */
+    .container {
+        width: 95vw; 
     }
+    button {
+        height: 45px; 
+        width: 100%; 
+        margin-left: 0; 
+    }
+}
 
-    #botao {
-        height: 45px; /* Ajusta a altura do botão em telas menores */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 500px; 
+        margin-left: 25%; 
+        margin-right: 25%; 
+        padding: 2rem; 
+    }
+    button {
+        width: 40%;
     }
 }
