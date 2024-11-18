@@ -115,6 +115,7 @@ const manipulaUrl2 = () => {
 };
 document.getElementById('feminino').onclick = manipulaUrl2;
 
+
 const manipulaUrl3 = () => {
     carregandoTela();
     limpaBody();
@@ -128,6 +129,21 @@ const manipulaUrl3 = () => {
     });
 };
 document.getElementById('all').onclick = manipulaUrl3;
+
+const seleciona = document.getElementById('opcoes-select')
+
+seleciona.onchange = () => {
+     
+        if(seleciona.value === 'masculino') {
+            limpaBody();
+            manipulaUrl1();}
+        if(seleciona.value === 'feminino') {
+            limpaBody();
+            manipulaUrl2();}
+        if(seleciona.value === 'all'){
+            limpaBody();
+            manipulaUrl3();}
+        }
 
 const manipulaBotao = () => {
     const texto = document.getElementById('senha').value;
@@ -145,6 +161,7 @@ document.getElementById('botao').onclick = manipulaBotao;
 document.getElementById('logout').onclick = () => {
     document.getElementById("box").style.display = "block";
     document.getElementById("protegido").style.display = "none";
+    document.getElementById('opcoes-select').value = ''
     localStorage.removeItem('logado');
     limpaBody();
     document.getElementById('senha').value = '';

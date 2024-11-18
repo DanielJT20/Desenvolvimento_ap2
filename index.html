@@ -10,35 +10,46 @@
   <script src="md5-min.js"></script>
   <script src="principal.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  
 </head>
-  <body>
+<body>
   
-    <div id="protegido">  
-      <h2>Elenco botafogo 2024-1</h2> <input type="text" id="pesquisa" class="campo_pesquisa" placeholder="Pesquisar"><button type="button" id="botao1">Buscar</button><hr>
+  <div id="protegido">  
+    <h2>Elenco botafogo 2024-1</h2>
+    <input type="text" id="pesquisa" class="campo_pesquisa" placeholder="Pesquisar">
+    <button type="button" id="botao1">Buscar</button>
+    <hr>
+    
+    <div id="opcoes">
       <button type="button" id="masculino">Masculino</button>
       <button type="button" id="feminino">Feminino</button>
-      <button type="button" id="all">Elenco Todo</button>   
-      <button type="button" id="logout">Sair</button>     
-      <div id="data-container"></div>
-      <div id="loading">Carregando...</div>
-      <div id="container"></div>
-    
-    </div>   
+      <button type="button" id="all">Elenco Todo</button>
+    </div>
+
+    <select id="opcoes-select">
+      <option value="" disabled selected>Selecione o time</option>
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+      <option value="all">Elenco Todo</option>
+    </select>
+
+    <button type="button" id="logout">Sair</button>     
+    <div id="data-container"></div>
+    <div id="loading">Carregando...</div>
+    <div id="container"></div>
+  </div>   
          
-      <div id="box">
-        <h3>Senha:</h3>
-          <input type="password" placeholder="Insira a senha" id="senha">
-          <button id="botao" type="button">Entrar</button> 
-          <h4>Efetue o login com a senha: libertadores</h4>  <!-- senha tera q mudar para LIBERTADORES -->
-      </div>
+  <div id="box">
+    <h3>Senha:</h3>
+    <input type="password" placeholder="Insira a senha" id="senha">
+    <button id="botao" type="button">Entrar</button> 
+    <h4>Efetue o login com a senha: libertadores</h4>
+  </div>
 
-
-  </body>
+</body>
 </html>

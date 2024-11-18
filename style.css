@@ -46,6 +46,9 @@ body {
 #protegido button:hover {
     background-color: #f0f0f0; 
 }
+button{
+    font-family: "PT Serif", serif;
+}
 
 #box {
 
@@ -139,7 +142,7 @@ p {
     display: none;
 }
 
-#protegido button {
+#protegido button, select {
     display: inline-block;
     margin: 0 0.5em;
     background-color: white; 
@@ -237,6 +240,26 @@ input {
     border: 1px solid #ccc; 
     font-size: small;
 }
+#opcoes {
+    display: inline-block; 
+}
+
+#opcoes-select {
+    display: none;
+    background-color: #444; 
+    color: white;
+    width: 40%;
+    margin: 2vh;
+    height: 2.5em;
+    border-radius: 5px;
+    font-size: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid #444; 
+    transition: transform 0.7s, box-shadow 0.7s;
+    font-family: "PT Serif", serif;
+}
 
 h2, h3, h4 {
     font-size: 24px; 
@@ -257,8 +280,13 @@ h2, h3, h4 {
         width: 15%;
         margin-left: 5%;
     }
-    button{
-        font-family: "PT Serif", serif;
+  
+    #opcoes {
+        display: none; 
+    }
+    
+    #opcoes-select {
+    display: inline-block;
     }
 }
 
@@ -277,9 +305,7 @@ h2, h3, h4 {
         width: 17%;
         margin-left: 5%;
     }
-    button{
-        font-family: "PT Serif", serif;
-    }
+
 }
 
 @media (min-width: 1024px) and (max-width: 1299px) {
@@ -298,9 +324,6 @@ h2, h3, h4 {
         width: 15%;
         margin-left: 5%;
     }
-    button{
-        font-family: "PT Serif", serif;
-    }
 }
 
 @media (min-width: 1300px) {
@@ -311,7 +334,5 @@ h2, h3, h4 {
     #container{
         padding: 0;
     }
-    button{
-        font-family: "PT Serif", serif;
-    }
+ 
 }
