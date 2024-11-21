@@ -147,7 +147,7 @@ seleciona.onchange = () => {
 
 const manipulaBotao = () => {
     const texto = document.getElementById('senha').value;
-    if (hex_md5(texto) === 'a54f6754415236f9bae4e0add5446d74') {
+    if (hex_sha256(texto) === 'ee9a289648199d7f8327e2f519f0d8f12471054935c259559a0cf0091fb79da8') {
         localStorage.setItem('logado', 'sim');
         document.getElementById("box").style.display = "none";
         document.getElementById("protegido").style.display = "block";
